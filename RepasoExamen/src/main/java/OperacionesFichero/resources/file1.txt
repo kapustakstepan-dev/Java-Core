@@ -1,0 +1,6 @@
+Esto es un ejemplo para la lectura del fichero1
+Esto es un ejemplo para la lectura del fichero2
+Esto es un ejemplo para la lectura del fichero32
+Esto es un ejemplo para la lectura del fichero13
+Esto es un ejemplo para la lectura del fichero342
+Esto es un ejemplo para la lectura del fichero2342 `1`

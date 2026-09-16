@@ -1,0 +1,7 @@
+Matricula,Marca,Modelo,Color,Combustible,Anio,Km,Precio,Estado
+
+1234ABC,Seat,Ibiza,Rojo,gasolina,2020,12500,45000,stock
+5678DEF,Toyota,Corolla,Blanco,diesel,2022,19800,18000,stock
+9012GHI,Ford,Focus,Azul,electrico,2019,11300,72000,vendido
+4324ADS,Toyota,Prius,Blanco,hibrido,2016,250000,50000,vendido
+6767SSS,Mercedes,S63 AMG,Negro,gasolina,2022,100,222000,nuevo

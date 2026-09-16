@@ -1,0 +1,548 @@
+{
+   "provincias": [
+      {
+         "CAPITAL_PROVINCIA": "A Coruña",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Galicia",
+         "CODPROV": "15",
+         "CODAUTON": "12",
+         "NOMBRE_PROVINCIA": "A Coruña"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Alicante/Alacant",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Comunitat Valenciana",
+         "CODPROV": "03",
+         "CODAUTON": "10",
+         "NOMBRE_PROVINCIA": "Alacant/Alicante"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Albacete",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla-La Mancha",
+         "CODPROV": "02",
+         "CODAUTON": "08",
+         "NOMBRE_PROVINCIA": "Albacete"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Almería",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "04",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Almería"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Vitoria-Gasteiz",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "País Vasco/Euskadi",
+         "CODPROV": "01",
+         "CODAUTON": "16",
+         "NOMBRE_PROVINCIA": "Araba/Álava"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Oviedo",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Principado de Asturias",
+         "CODPROV": "33",
+         "CODAUTON": "03",
+         "NOMBRE_PROVINCIA": "Asturias"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Ávila",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "05",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Ávila"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Badajoz",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Extremadura",
+         "CODPROV": "06",
+         "CODAUTON": "11",
+         "NOMBRE_PROVINCIA": "Badajoz"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Barcelona",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Cataluña/Catalunya",
+         "CODPROV": "08",
+         "CODAUTON": "09",
+         "NOMBRE_PROVINCIA": "Barcelona"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Bilbao",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "País Vasco/Euskadi",
+         "CODPROV": "48",
+         "CODAUTON": "16",
+         "NOMBRE_PROVINCIA": "Bizkaia"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Burgos",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "09",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Burgos"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Cáceres",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Extremadura",
+         "CODPROV": "10",
+         "CODAUTON": "11",
+         "NOMBRE_PROVINCIA": "Cáceres"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Cádiz",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "11",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Cádiz"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Santander",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Cantabria",
+         "CODPROV": "39",
+         "CODAUTON": "06",
+         "NOMBRE_PROVINCIA": "Cantabria"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Castellón de la Plana/Castelló de la Plana",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Comunitat Valenciana",
+         "CODPROV": "12",
+         "CODAUTON": "10",
+         "NOMBRE_PROVINCIA": "Castelló/Castellón"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Ceuta",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Ciudad Autónoma de Ceuta",
+         "CODPROV": "51",
+         "CODAUTON": "18",
+         "NOMBRE_PROVINCIA": "Ceuta"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Ciudad Real",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla-La Mancha",
+         "CODPROV": "13",
+         "CODAUTON": "08",
+         "NOMBRE_PROVINCIA": "Ciudad Real"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Córdoba",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "14",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Córdoba"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Cuenca",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla-La Mancha",
+         "CODPROV": "16",
+         "CODAUTON": "08",
+         "NOMBRE_PROVINCIA": "Cuenca"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Donostia/San Sebastián",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "País Vasco/Euskadi",
+         "CODPROV": "20",
+         "CODAUTON": "16",
+         "NOMBRE_PROVINCIA": "Gipuzkoa"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Girona",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Cataluña/Catalunya",
+         "CODPROV": "17",
+         "CODAUTON": "09",
+         "NOMBRE_PROVINCIA": "Girona"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Granada",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "18",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Granada"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Guadalajara",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla-La Mancha",
+         "CODPROV": "19",
+         "CODAUTON": "08",
+         "NOMBRE_PROVINCIA": "Guadalajara"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Huelva",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "21",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Huelva"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Huesca",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Aragón",
+         "CODPROV": "22",
+         "CODAUTON": "02",
+         "NOMBRE_PROVINCIA": "Huesca"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Palma de Mallorca",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Illes Balears",
+         "CODPROV": "07",
+         "CODAUTON": "04",
+         "NOMBRE_PROVINCIA": "Illes Balears"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Jaén",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "23",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Jaén"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Logroño",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "La Rioja",
+         "CODPROV": "26",
+         "CODAUTON": "17",
+         "NOMBRE_PROVINCIA": "La Rioja"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Las Palmas de Gran Canaria",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Canarias",
+         "CODPROV": "35",
+         "CODAUTON": "05",
+         "NOMBRE_PROVINCIA": "Las Palmas"
+      },
+      {
+         "CAPITAL_PROVINCIA": "León",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "24",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "León"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Lleida",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Cataluña/Catalunya",
+         "CODPROV": "25",
+         "CODAUTON": "09",
+         "NOMBRE_PROVINCIA": "Lleida"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Lugo",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Galicia",
+         "CODPROV": "27",
+         "CODAUTON": "12",
+         "NOMBRE_PROVINCIA": "Lugo"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Madrid",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Comunidad de Madrid",
+         "CODPROV": "28",
+         "CODAUTON": "13",
+         "NOMBRE_PROVINCIA": "Madrid"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Málaga",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "29",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Málaga"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Melilla",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Ciudad Autónoma de Melilla",
+         "CODPROV": "52",
+         "CODAUTON": "19",
+         "NOMBRE_PROVINCIA": "Melilla"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Murcia",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Región de Murcia",
+         "CODPROV": "30",
+         "CODAUTON": "14",
+         "NOMBRE_PROVINCIA": "Murcia"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Pamplona/Iruña",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Comunidad Foral de Navarra",
+         "CODPROV": "31",
+         "CODAUTON": "15",
+         "NOMBRE_PROVINCIA": "Navarra"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Ourense",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Galicia",
+         "CODPROV": "32",
+         "CODAUTON": "12",
+         "NOMBRE_PROVINCIA": "Ourense"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Palencia",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "34",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Palencia"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Pontevedra",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Galicia",
+         "CODPROV": "36",
+         "CODAUTON": "12",
+         "NOMBRE_PROVINCIA": "Pontevedra"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Salamanca",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "37",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Salamanca"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Santa Cruz de Tenerife",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Canarias",
+         "CODPROV": "38",
+         "CODAUTON": "05",
+         "NOMBRE_PROVINCIA": "Santa Cruz de Tenerife"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Segovia",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "40",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Segovia"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Sevilla",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Andalucía",
+         "CODPROV": "41",
+         "CODAUTON": "01",
+         "NOMBRE_PROVINCIA": "Sevilla"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Soria",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "42",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Soria"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Tarragona",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Cataluña/Catalunya",
+         "CODPROV": "43",
+         "CODAUTON": "09",
+         "NOMBRE_PROVINCIA": "Tarragona"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Teruel",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Aragón",
+         "CODPROV": "44",
+         "CODAUTON": "02",
+         "NOMBRE_PROVINCIA": "Teruel"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Toledo",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla-La Mancha",
+         "CODPROV": "45",
+         "CODAUTON": "08",
+         "NOMBRE_PROVINCIA": "Toledo"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Valencia",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Comunitat Valenciana",
+         "CODPROV": "46",
+         "CODAUTON": "10",
+         "NOMBRE_PROVINCIA": "València/Valencia"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Valladolid",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "47",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Valladolid"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Zamora",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Castilla y León",
+         "CODPROV": "49",
+         "CODAUTON": "07",
+         "NOMBRE_PROVINCIA": "Zamora"
+      },
+      {
+         "CAPITAL_PROVINCIA": "Zaragoza",
+         "COMUNIDAD_CIUDAD_AUTONOMA": "Aragón",
+         "CODPROV": "50",
+         "CODAUTON": "02",
+         "NOMBRE_PROVINCIA": "Zaragoza"
+      }
+   ],
+   "elaborado": "2026-03-14 12:19:11",
+   "origen": {
+      "descripcion": "elTiempo.net muestra la información meteorológica creada por © AEMET",
+      "copyright": "© AEMET. Autorizado el uso de la información y su reproducción citando a AEMET como autora de la misma.",
+      "web": "https://www.aemet.es",
+      "nota_legal": "https://www.aemet.es/es/nota_legal",
+      "language": "es",
+      "productor": "Agencia Estatal de Meteorología - AEMET. Gobierno de España"
+   },
+   "title": "elTiempo.net",
+   "ciudades": [
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "08",
+         "temperatures": {
+            "min": "8",
+            "max": "17"
+         },
+         "name": "Barcelona",
+         "id": {"0": "08019"},
+         "nameProvince": "Barcelona"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "28",
+         "temperatures": {
+            "min": "7",
+            "max": "14"
+         },
+         "name": "Madrid",
+         "id": {"0": "28079"},
+         "nameProvince": "Madrid"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "41",
+         "temperatures": {
+            "min": "11",
+            "max": "22"
+         },
+         "name": "Sevilla",
+         "id": {"0": "41091"},
+         "nameProvince": "Sevilla"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "46",
+         "temperatures": {
+            "min": "9",
+            "max": "19"
+         },
+         "name": "Valencia",
+         "id": {"0": "46250"},
+         "nameProvince": "València/Valencia"
+      },
+      {
+         "stateSky": {
+            "description": "Nuboso",
+            "id": "14n"
+         },
+         "idProvince": "48",
+         "temperatures": {
+            "min": "7",
+            "max": "13"
+         },
+         "name": "Bilbao",
+         "id": {"0": "48020"},
+         "nameProvince": "Bizkaia"
+      },
+      {
+         "stateSky": {
+            "description": "Cubierto",
+            "id": "16n"
+         },
+         "idProvince": "15",
+         "temperatures": {
+            "min": "11",
+            "max": "16"
+         },
+         "name": "A Coruña",
+         "id": {"0": "15030"},
+         "nameProvince": "A Coruña"
+      },
+      {
+         "stateSky": {
+            "description": "Cubierto",
+            "id": "16n"
+         },
+         "idProvince": "33",
+         "temperatures": {
+            "min": "8",
+            "max": "14"
+         },
+         "name": "Oviedo",
+         "id": {"0": "33044"},
+         "nameProvince": "Asturias"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "38",
+         "temperatures": {
+            "min": "15",
+            "max": "20"
+         },
+         "name": "Puerto de la Cruz",
+         "id": {"0": "38028"},
+         "nameProvince": "Santa Cruz de Tenerife"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "07",
+         "temperatures": {
+            "min": "7",
+            "max": "16"
+         },
+         "name": "Eivissa",
+         "id": {"0": "07026"},
+         "nameProvince": "Illes Balears"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "10",
+         "temperatures": {
+            "min": "8",
+            "max": "18"
+         },
+         "name": "Cáceres",
+         "id": {"0": "10037"},
+         "nameProvince": "Cáceres"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "04",
+         "temperatures": {
+            "min": "11",
+            "max": "20"
+         },
+         "name": "Almería",
+         "id": {"0": "04013"},
+         "nameProvince": "Almería"
+      },
+      {
+         "stateSky": {
+            "description": "Despejado",
+            "id": "11n"
+         },
+         "idProvince": "23",
+         "temperatures": {
+            "min": "5",
+            "max": "12"
+         },
+         "name": "Cazorla",
+         "id": {"0": "23028"},
+         "nameProvince": "Jaén"
+      }
+   ]
+}
