@@ -1,0 +1,167 @@
+# Concesionario de vehículos — Repaso Examen T1
+
+Mismo ejercicio que **TodoList**, pero con automóviles en vez de tareas.
+Sirve para repasar: **herencia, clases abstractas, polimorfismo, Lombok, streams, ficheros CSV, ficheros de objetos (.obj) y APIs con JSON/Gson.**
+
+---
+
+## 1. Enunciado (tipo examen)
+
+Un concesionario quiere gestionar sus vehículos.
+
+1. Todo vehículo (`Auto`) tiene: `id`, matrícula (`tuition`), año, CV, marca (`marc`), color, km, precio, si está vendido (`sold`) y **siempre un propietario** (`Owner`: nombre, apellido, email, DNI).
+2. `Auto` es **abstracta**. Hay tres tipos:
+   | Clase   | Atributo propio          | Precio (`calcPrice()`)                        | Al vender (`sell()`)                                   |
+   |---------|--------------------------|-----------------------------------------------|--------------------------------------------------------|
+   | `Car`   | `numDoors`               | 10000 + CV·100 − km·0.05 (mín. 1000)          | "Correo enviado a …" y queda vendido                   |
+   | `Bus`   | `numPassengers`          | 50000 + plazas·500 − km·0.1 (mín. 5000)       | Si tiene > 1.000.000 km no se vende (necesita ITV)     |
+   | `Truck` | `maxLoad` (toneladas)    | 30000 + t·2000 − km·0.08 (mín. 3000)          | Avisa de que hace falta carnet C y queda vendido       |
+   Si ya está vendido, todos avisan: "ya está vendido".
+3. **Controller**:
+   - Añadir vehículo → el `id` se **autoasigna** (1, 2, 3…) y **no se puede repetir matrícula**. Devuelve `true/false`.
+   - Buscar por matrícula, borrar, vender.
+   - Listar con **streams**: todos, por marca, por email del propietario, vendidos, por tipo, más baratos que X, valor total.
+4. **Ficheros** (carpeta `src/main/java/fils/`):
+   - Exportar **todos** a `all.csv`.
+   - Exportar los de **un propietario** a `<email>.csv`.
+   - Importar un CSV (según la columna `TYPE` se crea `Car`, `Bus` o `Truck`).
+   - Al **iniciar** el programa se cargan los vehículos de `data.obj`; al **salir** se guardan en `data.obj`.
+5. **API**: importar vehículos de `https://dummyjson.com/products/category/vehicle` y (opcional) de una URL propia que devuelva un array de autos (formato de `fils/autos.json`) usando **Gson**.
+
+### Formato del CSV
+```
+ID,TYPE,TUITION,MARC,COLOR,YEAR,CV,KM,PRICE,MAIL,EXTRA
+1,Car,1234ABC,Seat,red,2019,120,60000,19000.00,correo@gmail.com,5
+3,Bus,1111BUS,Mercedes,white,2015,300,400000,37500.00,correo@gmail.com,55
+4,Truck,2222TRK,Volvo,blue,2018,450,250000,46000.00,ana@gmail.com,18.0
+```
+`EXTRA` = el atributo propio de cada hijo (puertas, plazas o toneladas).
+
+---
+
+## 2. Estructura
+
+```
+src/main/java
+├── Main.java              ← programa con menú (carga data.obj al inicio, guarda al salir)
+├── MainFils.java          ← prueba rápida sin menú: CSV, .obj y JSON
+├── model
+│   ├── Owner.java         ← propietario (Serializable)
+│   ├── Auto.java          ← abstracta, Serializable
+│   ├── Car.java           ← extends Auto
+│   ├── Bus.java           ← extends Auto
+│   └── Truck.java         ← extends Auto
+├── controller
+│   ├── Controller.java    ← lista + lógica (añadir, listar, vender…)
+│   ├── FileController.java← CSV y .obj
+│   └── APIController.java ← HttpClient + org.json + Gson
+└── fils
+    ├── autos.json         ← ejemplo de JSON para Gson
+    ├── all.csv            ← se crea al exportar
+    ├── <email>.csv        ← se crea al exportar por email
+    └── data.obj           ← se crea al salir del programa
+```
+
+### De TodoList a untitled2
+
+| TodoList                         | untitled2 (autos)                         |
+|----------------------------------|-------------------------------------------|
+| `Person`                         | `Owner`                                   |
+| `Task` (abstracta)               | `Auto` (abstracta)                        |
+| `WorkTask`, `PersonalTask`       | `Car`, `Bus`, `Truck`                     |
+| `completeTask()`                 | `sell()`                                  |
+| `complete`                       | `sold`                                    |
+| `level`, `title`                 | `cv`, `marc`, `tuition`, `km`…            |
+| `TaskController`                 | `Controller`                              |
+| `FileController` / `APIController` | `FileController` / `APIController`      |
+| `files/`                         | `fils/`                                   |
+
+---
+
+## 3. Teoría para el examen
+
+### Herencia y clase abstracta
+- `abstract class Auto` → **no** se puede hacer `new Auto()`.
+- Un método `abstract` (sin cuerpo) **obliga** a todos los hijos a implementarlo: `calcPrice()`, `sell()`, `getExtra()`.
+- El hijo llama al constructor del padre con `super(...)` (siempre la primera línea).
+- `@Override showData()` → llama a `super.showData()` y después imprime lo suyo.
+
+### Polimorfismo
+```java
+Auto a = new Bus(...);   // variable del tipo padre, objeto del hijo
+a.sell();                // se ejecuta el sell() de Bus
+```
+En el `Controller` hacemos `auto.sell()` sin saber qué tipo es: cada uno responde a su manera.
+
+### Lombok
+- `@Getter @Setter` → genera getters y setters (en `boolean sold` el getter es `isSold()`).
+- `@NoArgsConstructor` → constructor vacío. `@AllArgsConstructor` → constructor con todos los atributos.
+- Los constructores de los hijos (con `super(...)`) se escriben a mano.
+- En el `pom.xml` está configurado `annotationProcessorPaths`, porque desde Java 23 Maven no activa Lombok solo. En IntelliJ: *Settings → Build → Compiler → Annotation Processors → Enable*.
+
+### Streams (en `Controller`)
+```java
+autoList.stream().filter(a -> a.getMarc().equalsIgnoreCase(marc)).forEach(Auto::showData);
+autoList.stream().filter(Auto::isSold).forEach(Auto::showData);
+autoList.stream().filter(type::isInstance)...                 // solo Car / Bus / Truck
+autoList.stream().sorted(Comparator.comparingDouble(Auto::getPrice))...
+autoList.stream().mapToDouble(Auto::getPrice).sum();          // valor total
+autoList.stream().filter(...).findFirst().orElse(null);       // buscar uno
+autoList.removeIf(a -> a.getTuition().equalsIgnoreCase(t));   // borrar
+```
+
+### Ficheros de texto (CSV)
+- **Escribir**: `BufferedWriter(new FileWriter(file))` + `write()` + `newLine()`.
+- **Leer**: `BufferedReader(new FileReader(file))`, la primera `readLine()` es la cabecera, luego `while ((line = br.readLine()) != null)` y `line.split(",")`.
+- Usar **try-with-resources** `try (...) { }` → el fichero se cierra solo.
+  ⚠️ En TodoList el `FileWriter` no se cerraba, por eso `all.csv` salía **vacío**. Aquí está arreglado.
+- `String.format(Locale.US, "%.2f", price)` → el decimal sale con punto (`19000.00`) y no con coma, si no el `split(",")` se rompería.
+
+### Ficheros de objetos (.obj)
+- La clase y **todo lo que contiene** (`Auto` y `Owner`) tienen que ser `implements Serializable`.
+- `private static final long serialVersionUID = 1L;` (se escribe así: `final long`, no `Long`).
+- Guardar: `ObjectOutputStream.writeObject(lista)`. Leer: `(ArrayList<Auto>) ois.readObject()`.
+- Si `data.obj` no existe (primera ejecución) se devuelve una lista vacía, sin excepción.
+
+### API + JSON
+```java
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+```
+- **org.json**: `new JSONObject(body)` → `getJSONArray("products")` → `getJSONObject(i)` → `getString/getInt/getDouble`.
+- **Gson**: `gson.fromJson(item.toString(), Car.class)` convierte el JSON en objeto si los nombres de los campos coinciden con los atributos. Como `Auto` es abstracta, miramos el campo `"type"` para saber a qué hijo convertir.
+- Para tener tu propia API: pega el contenido de `fils/autos.json` en https://dummyjson.com/custom-response, te da una URL y llamas a `controller.importAPI(url)`.
+
+---
+
+## 4. Cómo ejecutar
+1. Abrir el proyecto en IntelliJ y recargar Maven (dependencias: `lombok`, `gson`, `org.json`).
+2. `MainFils` → prueba todo sin menú y crea `all.csv`, `correo@gmail.com.csv` y `data.obj` en `fils/`.
+3. `Main` → menú completo:
+```
+1. Añadir vehiculo              7. Borrar vehiculo
+2. Listar todos                 8. Exportar todos a CSV (all.csv)
+3. Listar por marca             9. Exportar por email a CSV
+4. Listar por email             10. Importar CSV
+5. Listar vendidos              11. Importar de la API
+6. Vender vehiculo              0. Salir (guarda en data.obj)
+```
+
+---
+
+## 5. Errores típicos (y qué se arregló respecto a TodoList)
+- **CSV vacío** → no se cerraba el `FileWriter` → usar try-with-resources.
+- **`getJSONArray("posts")`** en una URL de `products` → la clave tiene que existir en el JSON que devuelve esa URL.
+- **`new JSONArray()` vacío** en `getTask()` → nunca entraba en el bucle; hay que hacer `new JSONArray(jsonResponse)`.
+- **`gson` sin inicializar** (`Gson gson;`) → `NullPointerException`; hay que poner `new Gson()`.
+- **`split(", ")` con espacio** pero el CSV escrito sin espacio (o al revés) → la importación falla. Escribir y leer con el mismo separador.
+- **`serialVertionUID` / `Long`** → mal escrito, Java lo ignora. Es `serialVersionUID` de tipo `long`.
+- Al importar (CSV/API/obj) se pasa por `addAuto()` para que cada vehículo tenga **id nuevo** y no haya matrículas repetidas.
+- Del CSV solo se recupera el **email** del propietario (nombre/DNI salen `null`) y los vehículos vuelven como **no vendidos**, igual que en TodoList.
+
+## 6. Ideas para practicar más
+- Añadir la columna `SOLD` al CSV y leerla al importar.
+- Listar los vehículos de más de X años (`LocalDate.now().getYear() - a.getYear() > x`).
+- Agrupar por marca: `Collectors.groupingBy(Auto::getMarc, Collectors.counting())`.
+- Crear otro hijo, `Motorbike`, y ver en qué sitios hay que tocar código (constructor, `calcPrice`, `sell`, `importCSV`, `parseAutos`, menú).
