@@ -10,9 +10,9 @@ import lombok.Setter;
 
 public class Truck extends Auto {
 
-    private int maxLoad;
+    private double maxLoad;
 
-    public Truck(String tuition, int year, int cv, String marc, String color, int km, Owner owner, double price, int maxLoad) {
+    public Truck(String tuition, int year, int cv, String marc, String color, int km, Owner owner, double price, double maxLoad) {
         super(tuition, year, cv, marc, color, km, owner, price);
         this.maxLoad = maxLoad;
     }

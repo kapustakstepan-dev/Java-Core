@@ -12,6 +12,11 @@ public class Bus extends Auto {
 
     private int numPassengers;
 
+    public Bus(String tuition, int year, int cv, String marc, String color, int km, Owner owner, double price, int numPassengers) {
+        super(tuition, year, cv, marc, color, km, owner, price);
+        this.numPassengers = numPassengers;
+    }
+
     @Override
     public void calcPrice() {
         setPrice(50000 + (getNumPassengers() *500) - (getKm() * 0.1));
