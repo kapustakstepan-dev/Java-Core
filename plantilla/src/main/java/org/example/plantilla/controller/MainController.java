@@ -44,6 +44,10 @@ public class MainController implements Initializable {
         btnSalir.setOnAction(new ManejoPulsaciones());
         btnVaciar.setOnAction(new ManejoPulsaciones());
 
+        btnSaludar.setOnMouseEntered(new ManejoRaton());
+        btnSaludar.addEventHandler(MouseEvent.MOUSE_EXITED, new ManejoRaton());
+
+
         btnSaludar.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -79,14 +83,12 @@ public class MainController implements Initializable {
             System.out.println("Raton generica");
             btnSaludar.setCursor(Cursor.CROSSHAIR);
 
-            if (actionEvent)
         }
     }
 
-    class ManejoRaton implements EventHandler<ActionEvent>{
+    class ManejoRaton implements EventHandler<MouseEvent>{
         @Override
-        public void handle(ActionEvent actionEvent) {
-
+        public void handle(MouseEvent event) {
             System.out.println("Raton por encima");
             btnSaludar.setCursor(Cursor.HAND);
         }
