@@ -14,4 +14,6 @@ module org.example.plantilla {
 
     opens org.example.plantilla to javafx.fxml;
     exports org.example.plantilla;
+    exports org.example.plantilla.controller;
+    opens org.example.plantilla.controller to javafx.fxml;
 }
