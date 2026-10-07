@@ -1,12 +1,14 @@
 package org.example.plantilla.controller;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 
@@ -17,9 +19,16 @@ public class MainController implements Initializable {
 
     @FXML
     private Button btnSalir, btnSaludar, btnVaciar;
+    private DropShadow shadow;
 
     @FXML
     private TextField editNombre;
+    
+    @FXML
+
+
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resourceBundle){
@@ -27,14 +36,10 @@ public class MainController implements Initializable {
         initanse();
         initGUI();
         actions();
-
-
-
     }
 
-
     public void initanse(){
-
+        shadow = new DropShadow();
     }
     public void initGUI(){
 
@@ -46,6 +51,13 @@ public class MainController implements Initializable {
 
         btnSaludar.setOnMouseEntered(new ManejoRaton());
         btnSaludar.addEventHandler(MouseEvent.MOUSE_EXITED, new ManejoRaton());
+        btnSalir.setOnMouseEntered(new ManejoRaton());
+        btnSalir.addEventHandler(MouseEvent.MOUSE_EXITED, new ManejoRaton());
+        btnVaciar.setOnMouseEntered(new ManejoRaton());
+        btnVaciar.addEventHandler(MouseEvent.MOUSE_EXITED, new ManejoRaton());
+
+
+
 
 
         btnSaludar.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -89,10 +101,19 @@ public class MainController implements Initializable {
     class ManejoRaton implements EventHandler<MouseEvent>{
         @Override
         public void handle(MouseEvent event) {
-            System.out.println("Raton por encima");
-            btnSaludar.setCursor(Cursor.HAND);
+            Button buttonEvent = (Button) event.getSource()
+            if (event.getEventType() == MouseEvent.MOUSE_ENTERED){
+                buttonEvent.setCursor(Cursor.HAND);
+                buttonEvent.getEffect(shadow);
+            }else if (event.getEventType() == MouseEvent.MOUSE_EXITED){
+                buttonEvent.setCursor(Cursor.CROSSHAIR);
+                buttonEvent.getEffect(null);
+
+            }
         }
     }
+
+
 
 
 
