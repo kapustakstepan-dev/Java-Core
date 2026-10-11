@@ -10,7 +10,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,103 +20,91 @@ import java.util.ResourceBundle;
 public class MainController implements Initializable {
 
     @FXML
-    private Button btnSalir, btnSaludar, btnVaciar;
-    private DropShadow shadow;
+    private BorderPane borderPane;
+
+    @FXML
+    FlowPane flowPane;
 
     @FXML
     private TextField editNombre;
-    
+
     @FXML
+    private Button btnSaludar, btnVaciar, btnSalir;
+    private DropShadow shadow;
 
-
-
+    @FXML
+    private Text textNombre;
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resourceBundle){
-        System.out.println("Inicializando la parte logica.");
-        initanse();
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("Inicializando la parte logica");
+        instances();
         initGUI();
         actions();
+
     }
 
-    public void initanse(){
+    private void instances() {
         shadow = new DropShadow();
     }
-    public void initGUI(){
 
+    private void initGUI() {
+        borderPane.setRight(null);
     }
-    public void actions(){
-        btnSaludar.setOnAction(new ManejoPulsaciones());
-        btnSalir.setOnAction(new ManejoPulsaciones());
-        btnVaciar.setOnAction(new ManejoPulsaciones());
+
+    private void actions() {
+
+        btnSaludar.setOnAction(evet ->
+        {
+            if (borderPane.getRight() == null) {
+                borderPane.setRight(flowPane);
+            }
+            String nombre = editNombre.getText();
+            // System.out.printf("Enhorabuena %s has completado el reto", nombre);
+            textNombre.setText(textNombre.getText() + "\n" + nombre);
+            editNombre.clear();
+        });
+        btnVaciar.setOnAction(event ->
+                editNombre.clear()
+        );
+        btnSalir.setOnAction(evet -> System.exit(0));
 
         btnSaludar.setOnMouseEntered(new ManejoRaton());
-        btnSaludar.addEventHandler(MouseEvent.MOUSE_EXITED, new ManejoRaton());
+        btnSaludar.setOnMouseExited(new ManejoRaton());
         btnSalir.setOnMouseEntered(new ManejoRaton());
-        btnSalir.addEventHandler(MouseEvent.MOUSE_EXITED, new ManejoRaton());
+        btnSalir.setOnMouseExited(new ManejoRaton());
         btnVaciar.setOnMouseEntered(new ManejoRaton());
-        btnVaciar.addEventHandler(MouseEvent.MOUSE_EXITED, new ManejoRaton());
+        btnVaciar.setOnMouseExited(new ManejoRaton());
 
-
-
-
-
-        btnSaludar.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("Raton por encima");
-                btnSaludar.setCursor(Cursor.HAND);
-            }
-        });
-
-        /*btnSaludar.setOnMouseExited(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("Raton saliendo");
-                btnSaludar.setCursor(Cursor.CROSSHAIR);
-
-            }
-        });
-
-         */
-
-        btnSaludar.addEventHandler(MouseEvent.MOUSE_EXITED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("Raton saliendo");
-                btnSaludar.setCursor(Cursor.CROSSHAIR);            }
-        });
 
     }
 
-    class ManejoPulsaciones implements EventHandler<ActionEvent>{
+    class ManejoPulsaciones implements EventHandler<ActionEvent> {
 
         @Override
-        public void handle(ActionEvent actionEvent) {
-            System.out.println("Raton generica");
-            btnSaludar.setCursor(Cursor.CROSSHAIR);
+        public void handle(ActionEvent event) {
+            System.out.println("Pulsacion generica");
+            if (event.getSource() == btnSalir) {
 
+            }
         }
     }
 
-    class ManejoRaton implements EventHandler<MouseEvent>{
+    class ManejoRaton implements EventHandler<MouseEvent> {
+
         @Override
         public void handle(MouseEvent event) {
-            Button buttonEvent = (Button) event.getSource()
-            if (event.getEventType() == MouseEvent.MOUSE_ENTERED){
+            Button buttonEvent = (Button) event.getSource();
+            if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
                 buttonEvent.setCursor(Cursor.HAND);
-                buttonEvent.getEffect(shadow);
-            }else if (event.getEventType() == MouseEvent.MOUSE_EXITED){
+                buttonEvent.setEffect(shadow);
+            } else if (event.getEventType() == MouseEvent.MOUSE_EXITED) {
                 buttonEvent.setCursor(Cursor.CROSSHAIR);
-                buttonEvent.getEffect(null);
-
+                buttonEvent.setEffect(null);
             }
         }
     }
-
-
-
 
 
 }
