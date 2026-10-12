@@ -11,6 +11,8 @@ module com.example.calculadora {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens com.example.calculadora to javafx.fxml;
+    opens com.example.calculadora.controller to javafx.fxml;
     exports com.example.calculadora;
+
+
 }
