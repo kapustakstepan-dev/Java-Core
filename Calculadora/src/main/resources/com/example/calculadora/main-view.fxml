@@ -1,33 +1,291 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #dcdcd8;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculadora.controller.MainController">
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-   <top>
-      <VBox prefHeight="200.0" prefWidth="100.0" spacing="6.0" style="-fx-background-color: #45494e; -fx-background-radius: 16;" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-         </padding>
-         <effect>
-            <DropShadow />
-         </effect>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <top>
+        <VBox spacing="14.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="16.0" />
+            </BorderPane.margin>
+            <children>
+                <VBox spacing="6.0" style="-fx-background-color: #45494e; -fx-background-radius: 16;">
+                    <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                    </padding>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                    <children>
+                        <Label fx:id="lblModo" text="modo: Basica" textFill="#d8d8d8">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="display" alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" style="-fx-background-color: #b3c2af; -fx-background-radius: 8;" text="0" textFill="#1d221a">
+                            <font>
+                                <Font name="Monospaced Bold" size="40.0" />
+                            </font>
+                            <padding>
+                                <Insets bottom="8.0" left="16.0" right="16.0" top="8.0" />
+                            </padding>
+                            <effect>
+                                <InnerShadow />
+                            </effect>
+                        </Label>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" spacing="30.0">
+                    <children>
+                        <RadioButton fx:id="rbBasica" mnemonicParsing="false" selected="true" text="Básica">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="tipo" />
+                            </toggleGroup>
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </RadioButton>
+                        <RadioButton fx:id="rbCientifica" mnemonicParsing="false" text="Científica" toggleGroup="$tipo">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </RadioButton>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+   <center>
+      <GridPane hgap="14.0" vgap="14.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label fx:id="lblModo" text="modo: Basica" textFill="#d8d8d8">
+            <Button fx:id="btnNumeroCinco" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
-                  <Font name="System Bold" size="11.0" />
+                  <Font size="20.0" />
                </font>
-            </Label>
-            <Label fx:id="display" text="Label" />
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnAC" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #c0345b; -fx-background-radius: 100;" text="AC" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroCuatro" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="4" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnMultiplicar" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #f2f2ef; -fx-background-radius: 100;" text="x" textFill="#333333" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroTres" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnDividir" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #f2f2ef; -fx-background-radius: 100;" text="÷" textFill="#333333" GridPane.columnIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnProcentaje" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #f2f2ef; -fx-background-radius: 100;" text="\%" textFill="#333333" GridPane.columnIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroDos" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroUno" layoutX="10.0" layoutY="39.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="1" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroNueve" layoutX="154.0" layoutY="294.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="9" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroOcho" layoutX="10.0" layoutY="36.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="8" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroSiete" layoutX="10.0" layoutY="36.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="7" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnRestar" layoutX="10.0" layoutY="36.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #f2f2ef; -fx-background-radius: 100;" text="-" textFill="#333333" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroSeis" layoutX="10.0" layoutY="36.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnIgual" layoutX="298.0" layoutY="412.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #f2f2ef; -fx-background-radius: 100;" text="=" textFill="#333333" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnNumeroZero" layoutX="10.0" layoutY="34.0" maxHeight="64.0" maxWidth="220.0" minHeight="64.0" minWidth="220.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="220.0" style="-fx-background-color: #4a4d52; -fx-background-radius: 100;" text="0" textFill="WHITE" GridPane.columnSpan="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnSumar" layoutX="10.0" layoutY="34.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #f2f2ef; -fx-background-radius: 100;" text="+" textFill="#333333" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnBorar" layoutX="441.0" layoutY="526.0" maxHeight="64.0" maxWidth="64.0" minHeight="64.0" minWidth="64.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="64.0" style="-fx-background-color: #4b5cd8; -fx-background-radius: 100;" text="⌫" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
          </children>
-      </VBox>
-   </top>
+      </GridPane>
+   </center>
+   <right>
+      <VBox fx:id="vbCientifica" prefHeight="200.0" spacing="14.0" visible="false" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnSin" alignment="CENTER" maxHeight="116.0" maxWidth="64.0" minHeight="116.0" minWidth="64.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="64.0" style="-fx-background-color: #4b5cd8; -fx-background-radius: 100;" text="sin" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnCos" maxHeight="116.0" maxWidth="64.0" minHeight="116.0" minWidth="64.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="64.0" style="-fx-background-color: #4b5cd8; -fx-background-radius: 100;" text="cos" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnTan" maxHeight="116.0" maxWidth="64.0" minHeight="116.0" minWidth="64.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="64.0" style="-fx-background-color: #4b5cd8; -fx-background-radius: 100;" text="tan" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="16.0" top="5.0" />
+         </BorderPane.margin></VBox>
+   </right>
+   <bottom>
+      <CheckBox fx:id="chkRegistro" mnemonicParsing="false" text="Registro" BorderPane.alignment="CENTER_LEFT">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </CheckBox>
+   </bottom>
+   <left>
+      <TextArea fx:id="txtRegistro" editable="false" prefWidth="170.0" visible="false" wrapText="true" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Monospaced Bold" size="13.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets right="16.0" />
+         </BorderPane.margin>
+      </TextArea>
+   </left>
 </BorderPane>
