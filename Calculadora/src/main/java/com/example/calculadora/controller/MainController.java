@@ -76,28 +76,6 @@ public class MainController {
 
     @FXML
     private void initialize(){
-        display.setStyle("-fx-text-fill: white;");
-        borderPane.setStyle("-fx-background-color: black; -fx-text-fill: white;");
-        btnBorar.setStyle("-fx-background-color: lightgrey; -fx-text-fill: white;");
-        btnAC.setStyle("-fx-background-color: lightgrey; -fx-text-fill: white;");
-        btnProcentaje.setStyle("-fx-background-color: lightgrey; -fx-text-fill: white;");
-        btnDividir.setStyle("-fx-background-color: orange; -fx-text-fill: white;");
-        btnMultiplicar.setStyle("-fx-background-color: orange; -fx-text-fill: white;");
-        btnRestar.setStyle("-fx-background-color: orange; -fx-text-fill: white;");
-        btnSumar.setStyle("-fx-background-color: orange; -fx-text-fill: white;");
-        btnIgual.setStyle("-fx-background-color: orange; -fx-text-fill: white;");
-        btnNumeroUno.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroDos.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroTres.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroCuatro.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroCinco.setStyle("-fx-background-color: darkgrey;");
-        btnNUmeroSeis.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroSiete.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroOcho.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroNueve.setStyle("-fx-background-color: darkgrey;");
-        btnNumeroZero.setStyle("-fx-background-color: darkgrey;");
-        btnCambioSigno.setStyle("-fx-background-color: darkgrey;");
-        btnComa.setStyle("-fx-background-color: darkgrey;");
 
     }
 
