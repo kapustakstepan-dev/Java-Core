@@ -97,9 +97,35 @@ public class MainController {
     @FXML
     private VBox vbCientifica;
 
+    private static final int MAX_DIGITS=12;
+
+    private double accumulator = 0;
+    private String operator = null;
+    private boolean newNumber = true;
+    private boolean error = false;
+
+
     @FXML
     private void initialize(){
+        vbCientifica.managedProperty().bind(vbCientifica.visibleProperty());
+        txtRegistro.managedProperty().bind(txtRegistro.visibleProperty());
 
+        rbCientifica.selectedProperty()
+                .addListener((obs, oldValue,newValue) ->{
+                    vbCientifica.setVisible(newValue);
+                    lblModo.setText(newValue ? "modo: Cientifica" : "modo: Basica");
+                    resizeWindow();
+
+
+        });
+    }
+
+
+
+    private void resizeWindow() {
+        if (borderPane.getScene() != null && borderPane.getScene().getWindow() != null){
+            borderPane.getScene().getWindow().sizeToScene();
+        }
     }
 
 }
