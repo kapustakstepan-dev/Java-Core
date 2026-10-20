@@ -10,7 +10,9 @@ module com.example.tienda {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
-    requires com.example.tienda;
+    requires java.desktop;
+    requires javafx.graphics;
+
 
     opens com.example.tienda to javafx.fxml;
     exports com.example.tienda;
