@@ -80,7 +80,6 @@ public class RegisterController implements Initializable {
 
     private void instances() {
         spinnerValueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(18,99,18,1);
-
         profileList = FXCollections.observableArrayList();
         profileList.addAll("Admin", "User");
 
