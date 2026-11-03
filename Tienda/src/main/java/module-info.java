@@ -12,6 +12,8 @@ module com.example.tienda {
     requires com.almasb.fxgl.all;
     requires java.desktop;
     requires javafx.graphics;
+    requires javafx.base;
+    requires com.example.tienda;
 
 
     opens com.example.tienda to javafx.fxml;
