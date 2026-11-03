@@ -27,6 +27,12 @@ public class Product {
 
     }
 
+    @Override
+    public String toString() {
+        return getTitle() + " " +
+                "price=" + price;
+    }
+
     public long getId() {
         return id;
     }

@@ -102,6 +102,8 @@ public class LoginController implements Initializable, EventHandler<ActionEvent>
                     try {
                         Parent root = loader.load();
                         Stage stage = (Stage) bottonLogin.getScene().getWindow();
+                        UserController userController = loader.getController();
+                        userController.setUser((String) loginData[0]);
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                     } catch (IOException e) {

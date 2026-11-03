@@ -14,6 +14,9 @@ public class DataSet {
 
     private static ObservableList<User> listUser = FXCollections.observableArrayList();
 
+
+
+
     public static void initListUser(){
         listUser.add(new User("admin","admin", "admin", "1234", 0));
         listUser.add(new User("user","user", "user", "1234", 1));

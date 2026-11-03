@@ -1,10 +1,14 @@
 package com.example.tienda.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class User {
 
     private Long id;
     private String name, surname, mail, pass;
     private int profile;
+    private ObservableList<Product> carrito = FXCollections.observableArrayList();
 
     public User() {}
 
@@ -16,8 +20,23 @@ public class User {
         this.profile = profile;
     }
 
+
+    public double getTotalCarrito(){
+        return carrito.stream().mapToDouble(Product::getPrice).sum();
+    }
+
+
+
     public String getPass() {
         return pass;
+    }
+
+    public ObservableList<Product> getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(ObservableList<Product> carrito) {
+        this.carrito = carrito;
     }
 
     public void setPass(String pass) {
