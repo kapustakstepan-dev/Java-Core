@@ -3,7 +3,6 @@ package com.example.tienda.controller;
 import com.example.tienda.TiendaApplication;
 import com.example.tienda.data.DataSet;
 import com.example.tienda.model.User;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,7 +20,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.Stack;
 
 public class AdminController implements Initializable {
 

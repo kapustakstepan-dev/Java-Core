@@ -16,6 +16,7 @@ public class DataSet {
 
     public static void initListUser(){
         listUser.add(new User("admin","admin", "admin", "1234", 0));
+        listUser.add(new User("user","user", "user", "1234", 1));
     }
 
     public static boolean addUser(User user){

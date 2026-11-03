@@ -18,13 +18,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Stack;
-
-import static org.controlsfx.control.action.ActionMap.action;
 
 public class LoginController implements Initializable, EventHandler<ActionEvent> {
 
@@ -94,8 +90,6 @@ public class LoginController implements Initializable, EventHandler<ActionEvent>
                     try {
                         Parent root = loader.load();
                         Stage stage = (Stage) bottonLogin.getScene().getWindow();
-                        AdminController adminController = loader.getController();
-                        adminController.setUser(loginData[0].toString());
                         Scene scene = new Scene(root);
                         stage.setScene(scene);
                     } catch (IOException e) {
@@ -103,8 +97,16 @@ public class LoginController implements Initializable, EventHandler<ActionEvent>
                     }
 
 
-                } else {
-
+                } else if ((int)loginData[1] == 1){
+                    FXMLLoader loader = new FXMLLoader(TiendaApplication.class.getResource("user-view.fxml"));
+                    try {
+                        Parent root = loader.load();
+                        Stage stage = (Stage) bottonLogin.getScene().getWindow();
+                        Scene scene = new Scene(root);
+                        stage.setScene(scene);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             } else {
                 textWarning.setFill(Color.RED);

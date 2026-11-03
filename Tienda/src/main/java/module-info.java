@@ -13,13 +13,17 @@ module com.example.tienda {
     requires java.desktop;
     requires javafx.graphics;
     requires javafx.base;
-    requires com.example.tienda;
+    requires org.json;
+    requires com.google.gson;
+    requires java.net.http;
+    requires jdk.compiler;
+    requires static lombok;
 
 
     opens com.example.tienda to javafx.fxml;
     exports com.example.tienda;
     exports com.example.tienda.controller;
-    opens com.example.tienda.controller to javafx.fxml;
+    opens com.example.tienda.controller to javafx.fxml, org.json, com.google.gson;
     exports com.example.tienda.data;
-    opens com.example.tienda.data to javafx.fxml, java.sql;
+    opens com.example.tienda.data to javafx.fxml,  org.json, com.google.gson;
 }
