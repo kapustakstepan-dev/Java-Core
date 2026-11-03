@@ -41,12 +41,12 @@
                 <TextField fx:id="editCorreo" alignment="CENTER" promptText="Introduce el correo" GridPane.columnSpan="2" GridPane.rowIndex="3" />
                 <TextField fx:id="editPass" alignment="CENTER" promptText="pass" GridPane.columnSpan="2" GridPane.rowIndex="5" />
                 <CheckBox fx:id="checkRecordar" mnemonicParsing="false" text="Recordar pass" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                <Button fx:id="bottonLogin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Registrar" GridPane.rowIndex="9">
+                <Button fx:id="bottonLogin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Volver" GridPane.rowIndex="9">
                     <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                     </GridPane.margin>
                 </Button>
-                <Button fx:id="botonRegistro" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Volver" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9">
+                <Button fx:id="botonRegistro" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Registrar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9">
                     <GridPane.margin>
                         <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                     </GridPane.margin>

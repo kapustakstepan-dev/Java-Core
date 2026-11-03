@@ -85,10 +85,27 @@ public class LoginController implements Initializable, EventHandler<ActionEvent>
         if (actionEvent.getSource() == bottonLogin){
             String mail = editCorreo.getText();
             String pass = editPass.getText();
-            int loginNumeber = DataSet.getLogin(mail,pass);
-            if (loginNumeber!=-1){
+            Object[] loginData = DataSet.getLogin(mail,pass);
+            if ((int)loginData[1]!=-1){
                 textWarning.setFill(Color.GREEN);
                 System.out.print("Login corecto");
+                if ((int)loginData[1] == 0){
+                    FXMLLoader loader = new FXMLLoader(TiendaApplication.class.getResource("admin-view.fxml"));
+                    try {
+                        Parent root = loader.load();
+                        Stage stage = (Stage) bottonLogin.getScene().getWindow();
+                        AdminController adminController = loader.getController();
+                        adminController.setUser(loginData[0].toString());
+                        Scene scene = new Scene(root);
+                        stage.setScene(scene);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+
+
+                } else {
+
+                }
             } else {
                 textWarning.setFill(Color.RED);
                 System.out.print("Login incorecto");
